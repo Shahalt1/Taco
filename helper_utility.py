@@ -2,7 +2,6 @@ import os
 import numpy as np
 import google.generativeai as genai
 from langchain_text_splitters import RecursiveCharacterTextSplitter, SentenceTransformersTokenTextSplitter
-import numpy as np
 from sklearn.manifold import TSNE
 import matplotlib.pyplot as plt
 import pypdf
