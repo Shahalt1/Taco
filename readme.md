@@ -8,14 +8,33 @@ This repository contains a Streamlit-based web application that leverages advanc
 
 ## Prerequisites
 
-- **Python**: Ensure Python (3.7 or higher) is installed on your system. [Download Python](https://www.python.org/downloads/)
-- **Google API Key**: Obtain your Google API key to use in the application. This will be entered when running the app.
+Ensure the following tools are installed on your system before proceeding:
+
+1. **Python**: Download and install Python from [Python's official website](https://www.python.org/).
+2. **Git**: Install Git by visiting [Git's official website](https://git-scm.com/).
+
+---
+
+## Installation Steps
+
+### Step 1: Clone the Repository or Download as ZIP
+
+- **Option 1 (Clone the Repo):**
+  ```bash
+  git clone https://github.com/Shahalt1/Taco.git
+  ```
+- **Option 2 (Download as ZIP):**
+  - Go to [https://github.com/Shahalt1/Taco.git](https://github.com/Shahalt1/Taco.git).
+  - Click on the green "Code" button and select "Download ZIP."
+  - Extract the contents to a folder of your choice.
 
 ---
 
 ## Installation Steps
 
 ### 1. Install Python (if not installed)
+
+- Open 'cmd' or 'PowerShell'
 
 - Check if Python is already installed:
   ```bash
