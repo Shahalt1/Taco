@@ -70,6 +70,12 @@ This repository contains a Streamlit-based web application that leverages advanc
 
 ---
 
+## Screenshot
+
+Below is a screenshot of the application:
+
+![App Screenshot](app.png)
+
 ## Support
 
 If you encounter any issues, feel free to open an issue in this repository. Contributions and suggestions are always welcome!
