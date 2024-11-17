@@ -119,7 +119,7 @@ def generate_multi_query(query, model):
     response = model.generate_content(prompt + query)
     return response.text.split("\n")
 
-def reranker(encoder, retrieved_documents, original_query):
+def reranker(encoder, retrieved_documents, original_query, n_results=3):
     unique_documents = set()
     for documents in retrieved_documents:
         for document in documents:
@@ -131,7 +131,7 @@ def reranker(encoder, retrieved_documents, original_query):
         pairs.append([original_query, doc])
         
     scores = encoder.predict(pairs)
-    top_indices = np.argsort(scores)[::-1][:5]
+    top_indices = np.argsort(scores)[::-1][:n_results]
     top_documents = [unique_documents[i] for i in top_indices]
     
     return top_documents

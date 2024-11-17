@@ -97,8 +97,8 @@ print("Text cleanup complete")
 
 # Tokenize the text data using Recusive Character Text Splitter in langchain
 print("Tokenizing the data using lanchain text splitter")
-biology_tokens = tokenizer(biology, chunk_size=1000)
-english = tokenizer(english1 + english2, chunk_size=1300, tokens_per_chunk=512)
+biology_tokens = tokenizer(biology, chunk_size=800)
+english = tokenizer(english1 + english2, chunk_size=1300, tokens_per_chunk=384) #The token limit of the models 'sentence-transformers/all-mpnet-base-v2' is: 384.
 History = tokenizer(socialscience1 + socialscience2, chunk_size=600)
 Geography = tokenizer(socialscience3 + socialscience4, chunk_size=600)
 print(f"Tokenization completed")
@@ -108,10 +108,13 @@ token_split_texts = biology_tokens + english + History + Geography
 print(f"Documents split into {len(token_split_texts)} chunks")
 
 token_split_texts = [token.replace('\n', ' ') for token in token_split_texts]
+with open('text_data.txt', 'w', encoding='utf8') as file:
+    file.write("\n\n".join(token_split_texts))
 
 # Upload the tokenized texts to a Chroma collection
+print("Upserting embedding data into Chroma ....")
 ids = ["UID_" + str(i) for i in range(len(token_split_texts))]
-collection.add(ids=ids, documents=token_split_texts)
+collection.upsert(ids=ids, documents=token_split_texts)
 
 if __name__ == '__main__':
     pass
